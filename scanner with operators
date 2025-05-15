@@ -1,0 +1,28 @@
+import java.util.Scanner;
+ 
+public class CurrencyConverter {
+    public static void main(String[] args) {
+Scanner input = new Scanner(System.in);
+ 
+        System.out.print("Enter Philippine peso: ");
+        double php = input.nextDouble();
+ 
+        // Conversion rates (based on 1 USD = 43.33089 PHP)
+        double usdRate = 1.000 / 43.33089;
+        double euroRate = 0.734719 / 43.33089;
+        double yuanRate = 6.346934 / 43.33089;
+        double korunaRate = 18.77263 / 43.33089;
+        double kroneRate = 5.449007 / 43.33089;
+        double sheqelRate = 3.726334 / 43.33089;
+        double dinarRate = 0.274588 / 43.33089;
+ 
+        System.out.println("The amount's equivalent to:");
+        System.out.printf("US Dollar : %.3f%n", php * usdRate);
+        System.out.printf("Euro      : %.3f%n", php * euroRate);
+        System.out.printf("Yuan      : %.3f%n", php * yuanRate);
+        System.out.printf("Koruna    : %.3f%n", php * korunaRate);
+        System.out.printf("Krone     : %.3f%n", php * kroneRate);
+        System.out.printf("Sheqel    : %.3f%n", php * sheqelRate);
+        System.out.printf("Dinar     : %.3f%n", php * dinarRate);
+    }
+}
