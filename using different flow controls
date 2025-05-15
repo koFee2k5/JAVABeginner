@@ -1,0 +1,49 @@
+import java.util.Scanner;
+ 
+public class InterestCalculator {
+    public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+        char again;
+ 
+        do {
+            // Get user input
+            System.out.print("Enter account balance: ");
+            double balance = scanner.nextDouble();
+            System.out.print("Enter annual interest rate (in %): ");
+            double rate = scanner.nextDouble() / 100;
+ 
+            // Copy original balance for each method
+            double annualBalance = balance;
+            double monthlyBalance = balance;
+            double dailyBalance = balance;
+ 
+            // Calculate using annual compounding
+            for (int year = 1; year <= 10; year++) {
+                annualBalance += annualBalance * rate;
+            }
+ 
+            // Calculate using monthly compounding
+            for (int month = 1; month <= 120; month++) {
+                monthlyBalance += monthlyBalance * (rate / 12);
+            }
+ 
+            // Calculate using daily compounding
+            for (int day = 1; day <= 3650; day++) {
+                dailyBalance += dailyBalance * (rate / 365);
+            }
+ 
+            // Output the results
+            System.out.printf("After 10 years:\n");
+            System.out.printf("Compounded annually: %.2f\n", annualBalance);
+            System.out.printf("Compounded monthly : %.2f\n", monthlyBalance);
+            System.out.printf("Compounded daily   : %.2f\n", dailyBalance);
+ 
+            // Ask user if they want to repeat
+            System.out.print("Do you want to perform another calculation? (Y/N): ");
+            again = scanner.next().toUpperCase().charAt(0);
+ 
+        } while (again == 'Y');
+ 
+        System.out.println("Program ended.");
+    }
+}
