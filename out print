@@ -1,0 +1,30 @@
+public class ResumeNiLuna {
+    public static void main(String[] args) {
+        System.out.println("=======================================");
+        System.out.println("            RESUME");
+        System.out.println("=======================================");
+        System.out.println("Name: Juan Lorenzo M. Luna");
+        System.out.println("Address: 4726 old sta. mesa st. Sta. Mesa, Manila");
+        System.out.println("Contact No.: 09608484538");
+        System.out.println("Email: 202410906@fit.edu.ph");
+        System.out.println("---------------------------------------");
+        System.out.println("OBJECTIVE:");
+        System.out.println("To obtain a position in the IT industry where I can apply");
+        System.out.println("my knowledge and skills in software development.");
+        System.out.println("---------------------------------------");
+        System.out.println("EDUCATION:");
+        System.out.println("Bachelor of Science in Information Technology");
+        System.out.println("Far Easter University Institute of Technology");
+        System.out.println("2024 - Present");
+        System.out.println("---------------------------------------");
+        System.out.println("SKILLS:");
+        System.out.println("- Java Programming");
+        System.out.println("- Web Development (HTML, CSS, JavaScript)");
+        System.out.println("- Problem Solving & Critical Thinking");
+        System.out.println("---------------------------------------");
+        System.out.println("EXPERIENCE:");
+        System.out.println("- Assisted in the development of web applications");
+        System.out.println("- Performed software testing and bug fixing");
+        System.out.println("=======================================");
+    }
+}
