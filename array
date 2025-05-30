@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class AverageGrade {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int[] grades = new int[5];
+        int sum = 0;
+
+        for (int i = 0; i < grades.length; i++) {
+            System.out.print("Enter grade " + (i + 1) + ": ");
+            grades[i] = input.nextInt();
+            sum += grades[i];
+        }
+
+
+        System.out.print("Grades: ");
+        for (int grade : grades) {
+            System.out.print(grade + " ");
+        }
+
+
+        double average = (double) sum / grades.length;
+        System.out.println("\nAverage: " + average);
+
+
+        if (average >= 90) {
+            System.out.println("NICE ONE, ETO SAMPUNGLIBOOOO!!!");
+        } else if (average >= 80) {
+            System.out.println("Taasan mo pa");
+        } else if (average >= 70) {
+            System.out.println("Pwede nayan?!?!?!");
+        } else {
+            System.out.println("Aral pa mabuti");
+        }
+
+        input.close();
+    }
+}
