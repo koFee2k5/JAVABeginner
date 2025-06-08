@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Login {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Step 1: Register
+        System.out.println("=== User Registration ===");
+        System.out.print("Enter a username: ");
+        String registeredUsername = scanner.nextLine();
+        System.out.print("Enter a password: ");
+        String registeredPassword = scanner.nextLine();
+
+        System.out.println("\nRegistration successful!");
+        
+        // Step 2: Login attempt
+        System.out.println("\n=== User Login ===");
+        int attempts = 3;
+        boolean isLoggedIn = false;
+
+        while (attempts > 0) {
+            System.out.print("Enter username: ");
+            String inputUsername = scanner.nextLine();
+            System.out.print("Enter password: ");
+            String inputPassword = scanner.nextLine();
+
+            if (inputUsername.equals(registeredUsername) && inputPassword.equals(registeredPassword)) {
+                isLoggedIn = true;
+                break;
+            } else {
+                attempts--;
+                System.out.println("Incorrect username or password. Attempts left: " + attempts);
+            }
+        }
+
+        if (isLoggedIn) {
+            System.out.println("\nLogin successful! Welcome, " + registeredUsername + "!");
+        } else {
+            System.out.println("\nLogin blocked. You have used all 3 attempts.");
+        }
+
+        scanner.close();
+    }
+}
