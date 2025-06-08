@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class GradeAverageCalculator {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of students: ");
+        int numberOfStudents = scanner.nextInt();
+
+        double totalClassSum = 0;
+
+        for (int student = 1; student <= numberOfStudents; student++) {
+            int[] grades = new int[5];
+            int sum = 0;
+
+            System.out.println("\nEnter 5 grades for Student " + student + ":");
+            for (int i = 0; i < 5; i++) {
+                System.out.print("Grade " + (i + 1) + ": ");
+                grades[i] = scanner.nextInt();
+                sum += grades[i];
+            }
+
+            double average = sum / 5.0;
+            totalClassSum += average;
+            System.out.println("Student " + student + " average grade: " + average);
+        }
+
+        double classAverage = totalClassSum / numberOfStudents;
+        System.out.println("\nOverall class average: " + classAverage);
+
+        scanner.close();
+    }
+}
