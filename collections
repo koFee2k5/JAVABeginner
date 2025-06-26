@@ -1,0 +1,169 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+import java.util.Scanner;
+
+public class CollectionExample {
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        Queue<Integer> queue = new LinkedList<>();
+        Scanner scanner = new Scanner(System.in);
+        boolean running = true;
+
+        while (running) {
+            System.out.println("\nChoose an option:");
+            System.out.println("1. Stack Operations");
+            System.out.println("2. LinkedList Operations");
+            System.out.println("3. Queue Operations");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+
+            try {
+                int choice = Integer.parseInt(scanner.nextLine());
+
+                switch (choice) {
+                    case 1:
+                        stackOperations(stack);
+                        break;
+                    case 2:
+                        linkedListOperations(linkedList);
+                        break;
+                    case 3:
+                        queueOperations(queue);
+                        break;
+                    case 4:
+                        running = false;
+                        System.out.println("Exiting the program. Goodbye!");
+                        break;
+                    default:
+                        System.out.println("Invalid choice! Please select a valid option.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Error: Please enter a valid number.");
+            } catch (Exception e) {
+                System.out.println("An unexpected error occurred: " + e.getMessage());
+            }
+        }
+        scanner.close();
+    }
+
+    private static void stackOperations(Stack<Integer> stack) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nStack Operations:");
+        System.out.println("1. Push");
+        System.out.println("2. Pop");
+        System.out.println("3. Peek");
+        System.out.print("Choose an operation: ");
+
+        try {
+            int operation = Integer.parseInt(scanner.nextLine());
+            switch (operation) {
+                case 1:
+                    System.out.print("Enter a number to push: ");
+                    int pushValue = Integer.parseInt(scanner.nextLine());
+                    stack.push(pushValue);
+                    System.out.println("Pushed " + pushValue + " to the stack.");
+                    break;
+                case 2:
+                    if (!stack.isEmpty()) {
+                        int poppedValue = stack.pop();
+                        System.out.println("Popped " + poppedValue + " from the stack.");
+                    } else {
+                        System.out.println("Stack is empty! Cannot pop.");
+                    }
+                    break;
+                case 3:
+                    if (!stack.isEmpty()) {
+                        int peekValue = stack.peek();
+                        System.out.println("Top of the stack is " + peekValue);
+                    } else {
+                        System.out.println("Stack is empty! Cannot peek.");
+                    }
+                    break;
+                default:
+                    System.out.println("Invalid operation! Please select a valid option.");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Please enter a valid number.");
+        } catch (Exception e) {
+            System.out.println("An unexpected error occurred: " + e.getMessage());
+        }
+    }
+
+    private static void linkedListOperations(LinkedList<Integer> linkedList) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nLinkedList Operations:");
+        System.out.println("1. Add");
+        System.out.println("2. Remove");
+        System.out.println("3. Display");
+        System.out.print("Choose an operation: ");
+
+        try {
+            int operation = Integer.parseInt(scanner.nextLine());
+            switch (operation) {
+                case 1:
+                    System.out.print("Enter a number to add: ");
+                    int addValue = Integer.parseInt(scanner.nextLine());
+                    linkedList.add(addValue);
+                    System.out.println("Added " + addValue + " to the linked list.");
+                    break;
+                case 2:
+                    if (!linkedList.isEmpty()) {
+                        int removedValue = linkedList.removeFirst();
+                        System.out.println("Removed " + removedValue + " from the linked list.");
+                    } else {
+                        System.out.println("Linked list is empty! Cannot remove.");
+                    }
+                    break;
+                case 3:
+                    System.out.println("Linked List: " + linkedList);
+                    break;
+                default:
+                    System.out.println("Invalid operation! Please select a valid option.");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Please enter a valid number.");
+        } catch (Exception e) {
+            System.out.println("An unexpected error occurred: " + e.getMessage());
+        }
+    }
+
+    private static void queueOperations(Queue<Integer> queue) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nQueue Operations:");
+        System.out.println("1. Enqueue");
+        System.out.println("2. Dequeue");
+        System.out.println("3. Display");
+        System.out.print("Choose an operation: ");
+
+        try {
+            int operation = Integer.parseInt(scanner.nextLine());
+            switch (operation) {
+                case 1:
+                    System.out.print("Enter a number to enqueue: ");
+                    int enqueueValue = Integer.parseInt(scanner.nextLine());
+                    queue.offer(enqueueValue);
+                    System.out.println("Enqueued " + enqueueValue + " to the queue.");
+                    break;
+                case 2:
+                    if (!queue.isEmpty()) {
+                        int dequeuedValue = queue.poll();
+                        System.out.println("Dequeued " + dequeuedValue + " from the queue.");
+                    } else {
+                        System.out.println("Queue is empty! Cannot dequeue.");
+                    }
+                    break;
+                case 3:
+                    System.out.println("Queue: " + queue);
+                    break;
+                default:
+                    System.out.println("Invalid operation! Please select a valid option.");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Please enter a valid number.");
+        } catch (Exception e) {
+            System.out.println("An unexpected error occurred: " + e.getMessage());
+        }
+    }
+}
